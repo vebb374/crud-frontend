@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/crud-frontend/static/css/main.29fa026d.chunk.css",
+    "main.js": "/crud-frontend/static/js/main.2a0e9928.chunk.js",
+    "main.js.map": "/crud-frontend/static/js/main.2a0e9928.chunk.js.map",
+    "runtime-main.js": "/crud-frontend/static/js/runtime-main.4fdd3232.js",
+    "runtime-main.js.map": "/crud-frontend/static/js/runtime-main.4fdd3232.js.map",
+    "static/js/2.0633d84d.chunk.js": "/crud-frontend/static/js/2.0633d84d.chunk.js",
+    "static/js/2.0633d84d.chunk.js.map": "/crud-frontend/static/js/2.0633d84d.chunk.js.map",
+    "static/js/3.de1b89f1.chunk.js": "/crud-frontend/static/js/3.de1b89f1.chunk.js",
+    "static/js/3.de1b89f1.chunk.js.map": "/crud-frontend/static/js/3.de1b89f1.chunk.js.map",
+    "index.html": "/crud-frontend/index.html",
+    "static/css/main.29fa026d.chunk.css.map": "/crud-frontend/static/css/main.29fa026d.chunk.css.map",
+    "static/js/2.0633d84d.chunk.js.LICENSE.txt": "/crud-frontend/static/js/2.0633d84d.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4fdd3232.js",
+    "static/js/2.0633d84d.chunk.js",
+    "static/css/main.29fa026d.chunk.css",
+    "static/js/main.2a0e9928.chunk.js"
+  ]
+}
