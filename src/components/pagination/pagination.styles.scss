@@ -4,6 +4,8 @@
   width: 80%;
   .pagination {
     display: flex;
+    align-items: center;
+    justify-content: center;
 
     .page-number {
       width: 2rem;
@@ -11,7 +13,8 @@
       background-color: #0b525b;
       border: 1px solid #1b3a4b;
 
-      a {
+      span {
+        cursor: pointer;
         text-decoration: none;
         color: white;
       }

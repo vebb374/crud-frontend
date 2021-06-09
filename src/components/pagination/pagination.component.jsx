@@ -11,9 +11,9 @@ const Pagination = ({ actorsPerPage, totalactors, paginate }) => {
       <div className="pagination">
         {pageNumbers.map((number) => (
           <span key={number} className="page-number">
-            <a onClick={() => paginate(number)} href="!#" className="page-link">
+            <span onClick={() => paginate(number)} className="page-link">
               {number}
-            </a>
+            </span>
           </span>
         ))}
       </div>

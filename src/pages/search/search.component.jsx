@@ -32,7 +32,6 @@ const Search = () => {
     setmode(e.target.value);
   };
   const SearchFieldChange = (e) => {
-    console.log(e.target.value);
     setsearchfield(e.target.value);
   };
 
