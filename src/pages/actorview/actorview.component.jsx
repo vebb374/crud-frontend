@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import "./actorview.styles.scss";
 function ActorDetails({ match, history }) {
   const id = match.params.id;
   const [actor, setactor] = useState({
@@ -66,24 +67,28 @@ function ActorDetails({ match, history }) {
       </div>
       <form className="actor-form" onSubmit={formsubmithandler}>
         <input
-          className="first-name"
+          className="first-name form-input"
           type="text"
           name="first_name"
-          placeholder="Type here"
+          placeholder="First Name"
           value={actor.first_name}
           onChange={handlechange}
         ></input>
         <input
-          className="last-name"
+          className="last-name form-input"
           name="last_name"
           type="text"
-          placeholder="Type here"
+          placeholder="Last Name"
           value={actor.last_name}
           onChange={handlechange}
         ></input>
-        <input type="submit" className="search-button" value="Update"></input>
+        <input
+          type="submit"
+          className="update-button button"
+          value="Update"
+        ></input>
       </form>
-      <button className="delete-button" onClick={deletehandler}>
+      <button className="delete-button button" onClick={deletehandler}>
         Delete
       </button>
     </div>
