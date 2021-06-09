@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./search.styles.scss";
 import Pagination from "../../components/pagination/pagination.component";
 import ActorsCollection from "../../components/actorscollection/actors-collection.component";
@@ -7,20 +7,34 @@ import axios from "axios";
 const Search = () => {
   const [actors, setactors] = useState([]);
   const [searchfield, setsearchfield] = useState("");
+  const [mode, setmode] = useState("name");
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [actorsPerPage] = useState(10);
+  const [actorsPerPage] = useState(12);
 
-  useEffect(() => {
-    const fetchactors = async () => {
-      setLoading(true);
-      const res = await axios.get("http://localhost:9000/api/actors");
+  const formsubmithandler = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    try {
+      const res = await axios.get(
+        `http://localhost:9000/api/actors/search${mode}/${searchfield}`
+      );
       setactors(res.data);
       setLoading(false);
-    };
+    } catch {
+      alert("no user found try again");
+      setLoading(false);
+      setactors([]);
+    }
+  };
 
-    fetchactors();
-  }, [searchfield]);
+  const HandleModeChange = (e) => {
+    setmode(e.target.value);
+  };
+  const SearchFieldChange = (e) => {
+    console.log(e.target.value);
+    setsearchfield(e.target.value);
+  };
 
   // Get current posts
   const indexOfLastactor = currentPage * actorsPerPage;
@@ -29,17 +43,34 @@ const Search = () => {
 
   // Change page
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
-  console.log(actors.length);
+
   return (
     <div className="Search-page">
-      <div className="description">Enter actor name to search</div>
+      <div className="description">Enter actor name / id to search</div>
       <div className="search-feature">
-        <input
-          className="search-input"
-          type="text"
-          placeholder="Type here"
-        ></input>
-        <button className="search-button">Search</button>
+        <form className="search-form" onSubmit={formsubmithandler}>
+          <select
+            className="mode-selection"
+            name="mode-selection"
+            value={mode}
+            onChange={HandleModeChange}
+          >
+            <option className="mode-value" value="name">
+              Name
+            </option>
+            <option className="mode-value" value="id">
+              ID
+            </option>
+          </select>
+          <input
+            className="search-input"
+            type="text"
+            placeholder="Type here"
+            value={searchfield}
+            onChange={SearchFieldChange}
+          ></input>
+          <input type="submit" className="search-button" value="Submit"></input>
+        </form>
       </div>
       <div className="actorscontainer">
         <ActorsCollection actors={currentactors} loading={loading} />

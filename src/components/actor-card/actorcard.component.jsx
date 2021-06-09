@@ -11,7 +11,7 @@ function ActorCard({ actor: { actor_id, first_name } }) {
       </div>
       <div className="details">
         <span className="actor-name">{first_name}</span>
-        <h2>{actor_id}</h2>
+        <span>{actor_id}</span>
       </div>
     </div>
   );

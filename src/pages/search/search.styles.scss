@@ -1,5 +1,6 @@
 .Search-page {
   height: auto;
+  min-height: calc(100vh - 50px);
   width: 100%;
   background-color: #1b3a4b;
   display: flex;
@@ -7,6 +8,20 @@
   justify-content: flex-start;
   flex-direction: column;
   align-items: center;
+  .mode-selection {
+    border: none;
+    height: 4rem;
+    color: white;
+    max-width: 30%;
+    font-size: 1.2rem;
+    background-color: #006466;
+    border-radius: 5% 0 0 5%;
+    padding: 1rem;
+    outline: none;
+    &:focus {
+      outline: none;
+    }
+  }
 
   .description {
     font-size: 3rem;
@@ -15,10 +30,10 @@
   .search-feature {
     .search-input {
       border: none;
-      border-radius: 5% 0 0 5%;
+
       background-color: #131b27;
       height: 4rem;
-      max-width: 70%;
+      max-width: 60%;
       font-size: 1.2rem;
       padding: 1rem;
       color: white;
