@@ -1,0 +1,11 @@
+.actors-view {
+  width: 80%;
+  display: grid;
+  margin: 30px 0;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-gap: 10px;
+  .actor-card-view {
+    align-self: center;
+    justify-self: center;
+  }
+}
