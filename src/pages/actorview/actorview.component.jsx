@@ -38,7 +38,10 @@ function ActorDetails({ match, history }) {
       await axios
         .put(`http://localhost:9000/api/actor/edit/${actor.actor_id}`, actor)
         .then((res) => res.data)
-        .then((data) => alert(data.message));
+        .then((data) => {
+          alert(data.message);
+          history.push("/");
+        });
     } catch {
       alert("operation failed");
     }
